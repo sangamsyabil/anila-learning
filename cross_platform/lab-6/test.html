@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-left-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .article {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .purple {
+            flex: 2;
+        }
+
+        .darkgrey {
+            flex: 1;
+        }
+
+        .white {
+            flex: 2;
+        }
+
+        .black {
+            flex: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <div class="flex-left-row">
+            <div class="article purple">Flex Item 1</div>
+            <div class="article darkgrey">Flex Item 2</div>
+        </div>
+        <div class="flex-left-row">
+            <div class="article white">Flex Item 3</div>
+            <div class="article black">Flex Item 4</div>
+        </div>
+    </div>
+</body>
+</html>
