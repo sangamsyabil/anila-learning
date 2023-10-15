@@ -1,0 +1,28 @@
+.lab6-header {
+    text-align: center;
+}
+#emoji-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.emoji-box {
+    border: 1px dotted red;
+    border-radius: 5px;
+    width: 200px;
+    height: 180px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+.emoji-icon {
+    font-size: 100px;
+    margin-bottom: -20px;
+}
+.emoji-box p {
+    background-color: #d5e1df;
+    padding: 5px;
+    border-radius: 5px;
+}
