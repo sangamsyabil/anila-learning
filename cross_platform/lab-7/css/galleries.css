@@ -1,0 +1,107 @@
+.gallery {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.gallery-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media screen and (min-width: 680px) {
+    .gallery-1 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-flow: dense;
+    }
+    .gallery-3 .block-b {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .gallery-3 .block-d {
+        grid-row: span 4;
+    }
+    .gallery-3 .block-h {
+        grid-column: span 2;
+    }
+
+    .gallery-4 {
+        display: grid;
+        grid-template-areas: 
+            "a c"
+            "b b"
+            "d e"
+            "d f"
+            "d g"
+            "d i"
+            "h h";
+    }
+    .gallery-4 .block-a {
+        grid-area: a;
+    }
+    .gallery-4 .block-b {
+        grid-area: b;
+    }
+    .gallery-4 .block-c {
+        grid-area: c;
+    }
+    .gallery-4 .block-d {
+        grid-area: d;
+    }
+    .gallery-4 .block-e {
+        grid-area: e;
+    }
+    .gallery-4 .block-f {
+        grid-area: f;
+    }
+    .gallery-4 .block-g {
+        grid-area: g;
+    }
+    .gallery-4 .block-h {
+        grid-area: h;
+    }
+    .gallery-4 .block-i {
+        grid-area: i;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .gallery-1 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-3 .block-d {
+        grid-row: span 3;
+    }
+
+    .gallery-4 {
+        grid-template-areas: 
+            "a b b"
+            "c b b"
+            "d e f"
+            "d g i"
+            "d h h";
+    }
+}
+
+@media screen and (min-width: 1288px) {
+    .gallery-1 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gallery-3 .block-h {
+        grid-column: span 3;
+    }
+
+    .gallery-4 {
+        grid-template-areas: 
+            "a b b c"
+            "d b b e"
+            "d f g i"
+            "d h h h";
+    }
+}

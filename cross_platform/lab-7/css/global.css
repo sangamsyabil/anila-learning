@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {  
+  margin: 0;
+  padding: 1rem;
+  
+  font-family: sans-serif;
+}
+
+header, main {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.block {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  padding: 2rem;
+
+  background-color: tomato;
+  color: #fff;
+  font-weight: bold;
+}
+
+.gallery {
+  padding-bottom: 5rem;
+}
+
