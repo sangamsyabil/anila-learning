@@ -1,0 +1,23 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    width: 50%;
+    margin: 0px auto;
+}
+
+#bean-counter h2 {
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+@media screen and (min-width: 768px) {
+    #beanLists {
+        margin: 0px 40%;
+    }
+}
+#beanLists {
+    margin: 0px 10%;
+}
+#beanLists li {
+    margin-left: 30px;
+}
