@@ -1,0 +1,140 @@
+/* Base Style */
+html,
+body {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  height: 100vh;
+}
+
+/* Doomsday Button */
+button {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+
+  background-image: radial-gradient(ellipse at center, #ff0505 10%, #960910 85%);
+  border: 0;
+  border-radius: 50%;
+
+  color: #fff;
+  font-family: monospace;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+/* Keyframes */
+@keyframes alert {
+  0%,
+  50%,
+  100% {
+    box-shadow: 0px 0px 10px 3px rgba(255, 0, 0, 0.4)
+  }
+  25%,
+  75% {
+    box-shadow: 0px 0px 10px 8px rgba(255, 0, 0, 0.8)
+  }
+}
+
+@keyframes warning {
+  0%,
+  100% {
+    background-image: radial-gradient(ellipse at center, #ff0505 10%, #960910 85%);
+  }
+  10%,
+  90% {
+    background-image: radial-gradient(ellipse at center, #ff0505 20%, #960910 85%);
+  }
+  20%,
+  80% {
+    background-image: radial-gradient(ellipse at center, #ff0505 30%, #960910 85%);
+  }
+  30%,
+  70% {
+    background-image: radial-gradient(ellipse at center, #ff0505 40%, #960910 85%);
+  }
+  40%,
+  60% {
+    background-image: radial-gradient(ellipse at center, #ff0505 50%, #960910 85%);
+  }
+  50% {
+    background-image: radial-gradient(ellipse at center, #ff0505 60%, #960910 85%);
+  }
+}
+
+@keyframes countdown {
+  0%,
+  18% {
+    content: "5";
+    opacity: 1;
+  }
+  19%,
+  38% {
+    content: "4";
+    opacity: 1;
+  }
+  39%,
+  58% {
+    content: "3";
+    opacity: 1;
+  }
+  59%,
+  78% {
+    content: "2";
+    opacity: 1;
+  }
+  79%,
+  98% {
+    content: "1";
+    opacity: 1;
+  }
+  99% {
+    content: "0";
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* explode keyframe to make it look like exploded */
+@keyframes explode {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+.doomsday {
+  animation: alert 4s infinite
+}
+
+.doomsday:hover {
+  animation: alert 4s infinite, warning 1s infinite;
+}
+
+.doomsday::before {
+  content: "WARNING";
+  opacity: 0;
+  transition: opacity 0.5s;
+  position: relative;
+}
+.doomsday:hover::before {
+  opacity: 1;
+}
+
+.doomsday:active {
+  animation: alert 2s linear infinite, warning 0.5s linear infinite, explode 1s linear 5s infinite;    
+}
+
+.doomsday:active::before {
+  content: "5";
+  opacity: 1;
+  animation: countdown 5s linear 1;
+  animation-fill-mode: forwards;
+}
