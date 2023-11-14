@@ -1,0 +1,19 @@
+:root {
+    --lime-color: #57EEAB;
+    --yellow-color: #FFFD8C;
+    --orange-color: #FF8480;
+    --white-color: #F7F7FF;
+    --black-color: #333131;
+}
+body {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+#header-logo {
+    background-image: url("./images/logo/logo.png");
+    height: 40px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
