@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mad Libs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md bg-dark border-bottom border-bottom-dark d-flex justify-content-center" data-bs-theme="dark">
+      <div class="navbar-nav">
+        <a id="lunchRoomLink" class="nav-link active" href="#lunchRoom">Lunch Room</a>
+        <a id="weatherReportLink" class="nav-link" href="#weatherReport">Weather Report</a>
+      </div>
+  </nav>
+  <main class="container p-5">
+    <div class="row mb-5">
+      <div class="col">
+        <form id="lunchRoom" class="p-5 bg-light border border-1 ">
+            <h2 class="mb-3">Lunch Room</h2>
+            
+            <div class="form-group mb-3">
+                <label for="lrContainer" class="form-label">Container</label>
+                <input type="text" id="lrContainer" name="lrContainer" class="form-control mb-3"  />
+            </div>
+                
+            <div class="form-group mb-3">
+                <label for="lrNoun" class="form-label">Noun</label>
+                <input type="text" id="lrNoun" name="lrNoun" class="form-control mb-3"  />
+            </div>
+                
+            <div class="form-group mb-3">
+                <label for="lrAdjective1" class="form-label">Adjective 1</label>
+                <input type="text" id="lrAdjective1" name="lrAdjective1" class="form-control mb-3"  />
+            </div>
+                
+            <div class="form-group mb-3">
+                <label for="lrAdjective2" class="form-label">Adjective 2</label>
+                <input type="text" id="lrAdjective2" name="lrAdjective2" class="form-control mb-3"  />
+            </div>
+               
+            <div class="form-group mb-3">
+                <label for="lrVegetable1" class="form-label">Vegetable 1</label>
+                <input type="text" id="lrVegetable1" name="lrVegetable1" class="form-control mb-3"  />
+            </div>
+                
+            <div class="form-group mb-3">
+                <label for="lrVegetable2" class="form-label">Vegetable 2</label>
+                <input type="text" id="lrVegetable2" name="lrVegetable2" class="form-control mb-3"  />
+            </div>
+                
+            <div class="form-group mb-3">
+                <label for="lrAnimal" class="form-label">Animal</label>
+                <input type="text" id="lrAnimal" name="lrAnimal" class="form-control mb-3"  />
+            </div>
+                
+
+            <button class="btn btn-primary">Read Story</button>
+        </form>
+
+        <form id="weatherReport" class="p-5 bg-light border border-1 d-none">
+            <h2 class="mb-3">Weather Report</h2>
+
+            <div class="form-group">
+                <label for="wrPluralNoun1" class="form-label">Plural Noun 1</label>
+                <input type="text" id="wrPluralNoun1" name="wrPluralNoun1" class="form-control mb-3" />
+            </div>
+           
+            <div class="form-group">
+                <label for="wrPluralNoun2" class="form-label">PluralNoun2</label>
+                <input type="text" id="wrPluralNoun2" name="wrPluralNoun2" class="form-control mb-3" />
+            </div>
+            
+            <div class="form-group">
+                <label for="wrAdjective1" class="form-label">Adjective 1</label>
+                <input type="text" id="wrAdjective1" name="wrAdjective1" class="form-control mb-3" />
+            </div>
+            
+            <div class="form-group">
+                <label for="wrAdjective2" class="form-label">Adjective 2</label>
+                <input type="text" id="wrAdjective2" name="wrAdjective2" class="form-control mb-3" />
+            </div>
+            
+            <div class="form-group">
+                <label for="wrNumber1" class="form-label">Number 1</label>
+                <input type="text" id="wrNumber1" name="wrNumber1" class="form-control mb-3" />
+            </div>
+
+            <div class="form-group">
+                <label for="wrNumber2" class="form-label">Number 2</label>
+                <input type="text" id="wrNumber2" name="wrNumber2" class="form-control mb-3" />
+            </div>
+
+            <div class="form-group">
+                <label for="wrArticleOfClothing" class="form-label">Article of Clothing</label>
+                <input type="text" id="wrArticleOfClothing" name="wrArticleOfClothing" class="form-control mb-3" />
+            </div>
+           
+            <button class="btn btn-primary">Read Story</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div id="story" class="p-5 border border-1 d-none"></div>
+      </div>
+    </div>
+      
+  </main>
+</body>
+</html>
