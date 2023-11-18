@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #000000;
+    --background-color: #EEEEEE;
+    --white-color: #FFFFFF;
+    --link-color: #589DED;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0 auto;
+    width: 95%;
+    background-color: var(--background-color);
+}
+
+/* header */
+header h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+/* navbar */
+.navbar {
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+}
+
+#navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#navBar>a {
+    flex: 0 0 auto;
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+/* information section */
+#info-section {
+    text-align: center;
+}
+
+#info-section>div>h3 {
+    font-weight: 400;
+    font-size: 30px;
+    padding-top: 60px;
+}
+
+#info-section>div>p {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#info-section>div>p>a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 14px;
+}
+
+/* main section */
+.pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon {
+    padding: 5px;
+    height: 250px;
+    width: 300px;
+    border: 1px solid var(--white-color);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 10px;
+    margin-top: 30px;
+    background-color: var(--white-color);
+
+    flex: 0 0 calc(350px - 10px);
+    margin: 10px;
+}
+
+.pokemon>a {
+    text-decoration: none;
+    color: var(--primary-color)
+}
+
+.pokemon>a>h2 {
+    margin: 10px;
+    text-decoration: none;
+    text-align: left;
+    font-size: 20px;
+}
+
+.pokemon-image {
+    height: 100px;
+    background-color: var(--background-color);
+    margin: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+}
+
+.pokemon-image>img {
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#item-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+#item-info>div {
+    flex: 1 0 50%;
+    /* Two columns */
+    box-sizing: border-box;
+    padding: 10px;
+
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+    line-height: 5px;
+}
+
+#item-info>div>span {
+    font-weight: 400;
+}
