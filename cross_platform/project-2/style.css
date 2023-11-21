@@ -243,6 +243,9 @@ footer {
 }
 
 @media screen and (max-width: 1025px) {
+    .footer-form {
+        justify-content: space-between;
+    }
     .footer-frame {
         flex-direction: column;
     }
