@@ -31,18 +31,13 @@ h4 {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 @media (min-width: 960px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-/* Style the images for better visibility */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
 }
