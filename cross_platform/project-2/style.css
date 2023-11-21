@@ -7,8 +7,8 @@
 }
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: var(--white-color);
 }
-
 
 header {
     width: 80%;
@@ -21,6 +21,7 @@ main {
 
 .main-header h1 {
     font-size: 60px;
+    margin-top: 20px;
 }
 .main-header p {
     font-size: 18px;
@@ -46,7 +47,7 @@ main {
 
 .apply-now-form {
     height: 370px;
-    width: 340px;
+    max-width: 340px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -120,31 +121,67 @@ main {
 /* Footer */
 footer {
     background-color: var(--yellow-color);
-    padding-left: 10%;
-    padding-right: 10%;
     padding-bottom: 25px;
     padding-top: 5px;
-
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+}
+.footer-frame {
+    width: 80%;
+    display: flex;
+}
+@media screen and (max-width: 1025px) {
+    .footer-frame {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer-frame {
+        width: 80%;
+    }
 }
 
-.footer-left > h4 {
+.footer-head > h4 {
     font-weight: 600;
     font-size: 16px;
     margin-bottom: -5px;
 }
-.footer-left > p {
+.footer-head > p {
     font-weight: 400;
     font-size: 14px;
     margin-bottom: 10px;
 }
+@media screen and (max-width: 1025px) {
+    .footer-head > h4 {
+        font-size: 14px;
+    }
+    .footer-head > p {
+        font-size: 12px;
+    }
+}
+.footer-left-frame {
+    width: 60%;
+}
 
-#hours-input, #city-input {
+.footer-form {
+    display: flex;
+}
+.input-hours-div, .input-city-div {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+.input-hours-div {
+    width: 15%;
+}
+.input-city-div {
+    width: 30%;
+}
+
+#input-hours, #input-city {
     height: 30px;
+    width: 100%;
     padding-left: 5px;
     font-size: 14px;
-    margin-right: 15px;
     background-color: var(--white-color);
 
     border: 0px;
@@ -152,14 +189,11 @@ footer {
     -moz-border-radius: 5px;
             border-radius: 5px;
 }
-#hours-input {
-    width: 90px;
-}
-#city-input {
-    width: 200px;
+#calculate-button-tablet {
+    display: none;
 }
 #calculate-button {
-    width: 170px;
+    width: 200px;
     height: 30px;
     background-color: var(--orange-color);
     color: var(--white-color);
@@ -170,15 +204,63 @@ footer {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
             border-radius: 10px;
+
+}
+@media screen and (max-width: 768px) {
+    #calculate-button-tablet {
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin-top: 20px;
+        background-color: var(--orange-color);
+        color: var(--white-color);
+        font-weight: 600;
+        font-size: 20px;
+
+        border: 0px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+                border-radius: 10px;
+    }
+    .input-hours-div {
+        width: 30%;
+    }
+    .input-city-div {
+        width: 60%;
+    }
+
+    #calculate-button {
+        display: none;
+    }
 }
 
-
-.footer-right {
+.footer-right-frame {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    width: 40%;
+    padding-top: 20px;
+}
 
-    padding-top: 40px;
+@media screen and (max-width: 1025px) {
+    .footer-frame {
+        flex-direction: column;
+    }
+    .footer-left-frame {
+        width: 100%;
+    }
+    .footer-right-frame {
+       justify-content: center;
+       width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .input-hours-div {
+        width: 30%
+    }
+    .input-city-div {
+        width: 65%;
+    }
 }
 
 
@@ -211,11 +293,11 @@ footer {
 /* Tablet */
 @media screen and (max-width: 1025px) {
     header {
-        width: 50%;
+        width: 60%;
         margin: 0 auto;
     }
     main {
-        width: 50%;
+        width: 60%;
         margin: 0 auto;
     }
     .main-header h1 {
@@ -234,42 +316,9 @@ footer {
     }
     .apply-now-form {
         margin-top: 200px; 
-    }
-    footer {
-        padding-left: 25%;
-        padding-right: 25%;
-    
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-    }   
-    .footer-left > h4 {
-        font-size: 14px;
-    }
-    .footer-left > p {
-        font-size: 11px;
-    }
-    #hours-input, #city-input {
-        margin-right: 10px;
-        height: 25px;
-    }
-    #city-hours {
-        width: 65px;
-    }
-    #city-input {
-        width: 115px;
-    }
-    #calculate-button {
-        width: 130px;
-        height: 25px;
-        font-size: 15px;
-    }
-    .footer-right {
-        justify-content: center;
-        padding-top: 10px;
-    }
-    #instagram-icon, #facebook-icon, #twitter-icon, #linkedin-icon {
-        margin: 15px;
+        box-sizing: border-box;
+        min-width: 100%;
+        height: 440px;
     }
 }
 
@@ -297,28 +346,5 @@ footer {
     .apply-now-form > p {
         margin-top: -12px;
         font-size: 12px;
-    }
-    .form-input {
-        font-size: 13px;
-    }
-    footer {
-        padding-left: 10%;
-        padding-right: 10%;
-    }   
-    .footer-left > h4 {
-        font-size: 14px;
-    }
-    .footer-left > p {
-        font-size: 11px;
-    }
-    #city-hours {
-        width: 33%;
-    }
-    #city-input {
-        width: 66%;
-    }
-    #calculate-button {
-        width: 100%;
-        margin-top: 20px;
     }
 }
