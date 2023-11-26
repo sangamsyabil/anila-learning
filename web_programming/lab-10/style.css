@@ -1,0 +1,91 @@
+:root {
+    --primary-color: #374794;
+    --secondary-color: #F66247;
+}
+
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    width: 80%;
+    margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+    body {
+        width: 100%;
+    }
+}
+
+.colorOfDay {
+    padding: 50px;
+}
+.colorOfDay h1 {
+    text-align: center;
+}
+
+#chooseDate {
+    font-weight: 400;
+}
+#dateInput {
+    box-sizing: border-box;
+    margin-top: 5px;
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+    border: 0px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: var(--secondary-color) 0px 2px 4px 0px;
+}
+#dateForm > button {
+    display: block;
+    float: right;
+    width: 130px;
+    margin-top: 20px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.clearHistorySec {
+    margin-top: 80px;
+}
+.clearHistorySec > h1 {
+    font-weight: 400;
+}
+#clearHistory {
+    display: block;
+    float: right;
+    border: 0;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+#searchHistory {
+    margin-top: 50px;
+    list-style: none;
+    padding: 0px;
+}
+#searchHistory > li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    line-height: 80px;
+    padding-left: 15px;
+}
+
+.colorSwatch {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.historyInfo {
+    line-height: 20px;
+}
