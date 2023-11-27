@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #374794;
+    --secondary-color: #F66247;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        width: 90%;
+    }
+}
+
+.headingTop {
+    font-weight: 400;
+    font-size: 50px;
+}
+
+#chooseDate {
+    font-weight: 400;
+}
+
+#dateInput {
+    box-sizing: border-box;
+    margin-top: 5px;
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+    border: 0px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: var(--secondary-color) 0px 2px 4px 0px;
+}
+
+#dateForm>button {
+    display: block;
+    width: 130px;
+    margin-top: 20px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+#apodData {
+    margin-top: 10px;
+}
+
+.apodDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 20px;
+    padding-top: 1px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.apodDiv > div {
+    width: 50%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+@media only screen and (max-width: 600px) {
+    .apodDiv > div {
+        width: 100%;
+    }
+}
+.apodImage {
+    height: 300px;
+    width: 100%;
+}
+.addFav {
+    display: block;
+    width: 160px;
+    margin-top: 20px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}

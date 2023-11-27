@@ -1,0 +1,126 @@
+:root {
+    --primary-blue: #5175FF;
+    --secondary-blue: #829CFF;
+    --light-blue: #C1CFFF;
+    --lighter-blue: #E4EAFF;
+    --dark-gray: #1C1F2C;
+    --gray: #212529;
+    --light-gray: #F8F8F8;
+    --white: #FFFFFF;
+
+    /* colors not provided and is in the design */
+    --primary-purple: #7100fd;
+    --secondary-purple: #8939fd;
+
+    --font-family: 'Kumbh Sans', sans-serif;
+    --font-small-weight: 400;
+    --font-high-weight: 700;
+}
+body {
+    font-family: var(--font-family);
+    font-weight: var(--font-small-weight);
+    background-color: var(--light-gray);
+}
+
+header {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.information-section {
+    display: flex;
+    align-items: center;
+}
+.info-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;  
+}
+.info-left > h2 {
+    font-weight: var(--font-high-weight);
+    padding-bottom: 10px;
+}
+.info-left > p {
+    font-size: 10px;
+}
+.get-started {
+    width: 115px;
+    height: 35px;
+    border: 1px solid var(--primary-purple);
+    border-radius: 30px;
+    background-color: var(--primary-purple);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: var(--font-high-weight);
+}
+
+.info-right {
+    height: 400px;
+    width: 50%;
+    text-align: center;
+}
+.info-right > img {
+    height: 100%;
+}
+
+.pseudo-section {
+    height: 150px;
+    width: 100%;
+}
+
+
+.plans-section {
+    background-color: var(--dark-gray);
+    display: flex;
+    justify-content: space-around;
+    height: 200px;
+}
+
+.basic-plan, .pro-plan, .ultimate-plan {
+    width: 230px; 
+    height: 300px;
+    text-align: center;
+    margin-top: -100px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.basic-plan {
+    background-color: var(--white);
+}
+.pro-plan {
+    background-color: var(--primary-purple);
+    color: var(--white);
+} 
+.ultimate-plan {
+    background-color: var(--white);
+}
+.plans-section > div > h5 {
+    font-size: 14px;
+    font-weight: var(--font-high-weight);
+}
+.plans-section > div > h1 {
+    font-size: 25px;
+    font-weight: var(--font-high-weight);
+}
+.plans-section > div > p {
+    font-size: 10px;
+}
+
+.basic-plan-button {
+    background-color: var(--lighter-blue);
+    border: 0px;
+    color: var(--primary-purple)
+}
+.pro-plan-button {
+    background-color: var(--white);
+    border: 0px;
+    color: var(--primary-purple)
+}
+
+
+
+footer {
+    background-color: var(--dark-gray);
+    text-align: center;
+    padding: 60px;
+}

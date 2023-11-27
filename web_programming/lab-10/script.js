@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to display search history with recent data at the top
     function displayHistory() {
         searchHistory.innerHTML = "";
-    
+
         if (history.length === 0) {
             const li = document.createElement("li");
             li.textContent = "There are no records in history.";
