@@ -7,7 +7,7 @@
     --gray: #212529;
     --light-gray: #F8F8F8;
     --white: #FFFFFF;
-
+    
     /* colors not provided and is in the design */
     --primary-purple: #7100fd;
     --secondary-purple: #8939fd;
@@ -94,17 +94,25 @@ header {
 .ultimate-plan {
     background-color: var(--white);
 }
-.plans-section > div > h5 {
+.plan-left {
+    padding-bottom: 20px;
+}
+.plan-left > h5 {
     font-size: 14px;
     font-weight: var(--font-high-weight);
 }
-.plans-section > div > h1 {
-    font-size: 25px;
+.plan-left > h1 {
+    font-size: 26px;
     font-weight: var(--font-high-weight);
 }
-.plans-section > div > p {
+.plan-left > p, .plan-right > p {
     font-size: 10px;
 }
+.plan-left > p > span{
+    display: block;
+    height: 26px;
+}
+
 
 .basic-plan-button {
     background-color: var(--lighter-blue);
@@ -118,7 +126,6 @@ header {
 }
 
 
-
 footer {
     background-color: var(--dark-gray);
     text-align: center;
@@ -127,3 +134,242 @@ footer {
 
 
 /* for sign up page */
+.sign-up-page {
+    display: flex;
+    align-items: stretch;
+    height: 600px;
+    padding: 0px;
+}
+
+.sign-up-header {
+    display: block;
+    position: absolute;
+    top: 0px;
+}
+.left-box {
+    flex-basis: 66%;
+    background-color: var(--light-gray);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 150px;
+}
+.left-box > h1 {
+    font-weight: var(--font-high-weight);
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.left-box > p {
+    font-size: 12px;
+    color: var(--gray);
+}
+
+.right-box {
+    flex-basis: 33%;
+    background-color: var(--dark-gray);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.right-box-form {
+    background-color: var(--white);
+    border-radius: 10px;
+
+    padding: 30px;
+    margin-right: 50px;
+    margin-left: -80px;
+}
+input, select, option {
+    width: 100%;
+    height: 30px;
+    border: .5px solid var(--gray);
+    border-radius: 5px;
+    margin: 5px 0px;
+    font-size: 12px;
+}
+
+label {
+    font-size: 12px;
+    margin: 5px 0px;
+}
+.sign-up-button {
+    width: 100%;
+    height: 35px;
+    margin-top: 50px;
+    border: 1px solid var(--primary-purple);
+    border-radius: 30px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: var(--font-high-weight);
+}
+.pseudo-box {
+    display: flex;
+    height: 200px;
+}
+.pseudo-left {
+    flex-basis: 66%;
+    background-color: var(--light-gray);
+}
+.pseudo-right {
+    flex-basis: 33%;
+    background-color: var(--dark-gray);
+}
+
+@media only screen and (max-width: 768px) {
+    .information-section {
+        flex-direction: column-reverse;
+    }
+    .info-right, .info-left {
+        width: 100%;
+    }
+    .pseudo-section {
+        height: 350px;
+    }
+    .plans-section {
+        flex-direction: column;
+        align-items: center;
+        height: 70px;
+    }
+    .basic-plan, .pro-plan, .ultimate-plan {
+        width: 100%; 
+        max-width: 540px;
+        height: 250px;
+        text-align: center;
+        margin-top: 30px;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .plan-left > h5 {
+        font-size: 12px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .plan-left > h1 {
+        font-size: 20px;
+        padding: 0px;
+        margin: 6px;
+    }
+    .plan-left > p, .plan-right > p {
+        font-size: 8px;
+        padding: 0px;
+        margin: 4px;
+    }
+    .plan-left > p > span{
+        height: 12px;
+    }
+    footer {
+        height: 500px;
+        padding-top: 420px;
+    }
+    .get-started {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .sign-up-page {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .left-box {
+        padding-right: 0px;
+        padding-top: 100px;
+    }
+    .pseudo-box {
+        flex-direction: column;
+        height: 1000px;
+        margin-top: -135px;
+        z-index: -1;
+    }
+    .pseudo-left {
+        display: none;
+    }
+    .pseudo-right {
+        background-color: var(--dark-gray);
+    }
+    .right-box {
+        background-color: var(--white);
+    }
+    .right-box-form {
+        margin-right: 0px;
+        margin-left: 0px;
+        z-index: 1;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .information-section {
+        flex-direction: row;
+    }
+    .info-tact, .tact-header {
+        max-width: 540px;
+    }
+    .information-section {
+        align-items: flex-start;
+    }
+    .info-right {
+        text-align: center;
+    }
+    .info-right > img {
+        height: 50%;
+    }
+    .pseudo-section {
+        height: 200px;
+    }
+    .plans-section {
+        height: 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .basic-plan, .pro-plan, .ultimate-plan {
+        margin-top: 40px;
+        max-width: 540px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .pro-plan-button, .basic-plan-button {
+        margin-left: 20px;
+    }
+    footer {
+        height: 500px;
+        padding-top: 420px;
+    }
+
+    .plan-left {
+        padding: 20px;
+        text-align: left;
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .plan-left > h5 {
+        font-size: 12px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .plan-left > h1 {
+        font-size: 26px;
+        padding-top: 10px;
+        margin: 0px;
+    }
+    .plan-left > p, .plan-right > p {
+        font-size: 8px;
+        padding: 5px;
+        margin: 0px;
+    }
+    .plan-left > p > span{
+        height: 12px;
+    }
+    .plan-right {
+        width: 50%;
+        box-sizing: border-box;
+        text-align: left;
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    margin-top: -2px;
+}

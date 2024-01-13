@@ -1,0 +1,44 @@
+1: D 
+2: D 
+3: A 
+4: D 
+5: B 
+6: A 
+7: B 
+8: A 
+9: B
+10: A
+11: C
+12: D
+13: A
+14: D
+15: A
+16:
+First, I'd organize the images in the folder, making sure there's a smaller thumbnail version and a bigger HD version for each image.
+Then, I'd create the webpage for the image gallery using HTML and CSS. In the HTML, I'd set up a grid or a layout to display the thumbnails. Each thumbnail would link to its corresponding HD image using the <a> tag.
+For responsiveness, I'd use CSS to make sure the gallery looks good on different screen sizes. I'd consider using media queries to adjust the size of the thumbnails or the layout of the gallery for smaller screens, like phones or tablets.
+When someone clicks on a thumbnail, it would open the HD version of the image in a new tab. This part doesn't need any complicated coding; it's just setting up the <a> tags properly.
+So, to sum it up, I'd organize the images, create the HTML and CSS for the gallery, make sure it looks good on different screens, and set up the links so clicking a thumbnail opens the HD image in a new tab.
+17:
+  Part A: box
+  Part B: padding
+  Part C: border
+  Part D: margin
+18:
+  AA: outer-box
+  BB: center
+  CC: center
+  DD: solid
+  EE: inner-box
+  FF: background-color
+
+
+
+
+
+
+17: a 
+18: a 
+19: b 
+20: b 
+21: a

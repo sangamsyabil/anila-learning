@@ -1,3 +1,7 @@
+// Account Email: aenilas99@gmail.com
+// API Key: cEcu1q4HSB9oPfTmaJGVDhUrlDMfzO3G3ENk2AdD
+// https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+
 document.addEventListener('DOMContentLoaded', () => {
     const dateForm = document.getElementById('dateForm');
     const apodDataElement = document.getElementById('apodData');
@@ -13,32 +17,60 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        try {
-            const apod = await fetchApodData(dateInput);
-            displayApodData(apod);
-        } catch (error) {
-            console.error('Error fetching APOD:', error);
+        async function callFunction() {
+            try {
+                const apod = await fetchApodData(dateInput);
+                console.log(apod);
+
+                displayApodData(apod);
+
+                apodDiv = document.getElementsByClassName('apodDiv');
+                const favoriteButton = document.getElementById('addFav');
+                if (favoriteButton) {
+                    favoriteButton.addEventListener('click', () => {
+                        saveToFavorites(apod);
+                        apodDiv.appendChild(favoriteButton);
+                    });
+                }
+            } catch (error) {
+                console.error(error);
+            }
         }
+        callFunction();
     });
 
     function fetchApodData(date) {
-        // Simulating API call using a static object (Replace with actual fetch to APOD API)
-        const staticData = {
-            "date": "2022-03-27",
-            "explanation": "Why would the surface of Titan light up with a blinding flash? The reason: a sunglint from liquid seas.",
-            "hdurl": "https://apod.nasa.gov/apod/image/2203/TitanGlint_cassini_2002.jpg",
-            "media_type": "image",
-            "service_version": "v1",
-            "title": "Titan Seas Reflect Sunlight",
-            "url": "https://apod.nasa.gov/apod/image/2203/TitanGlint_cassini_960.jpg"
-        };
+        const api_key = "cEcu1q4HSB9oPfTmaJGVDhUrlDMfzO3G3ENk2AdD";
+        const apiUrl = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api_key}`;
 
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(staticData);
-            }, 1000); // Simulating delay of 1 second for API call
+        return new Promise((resolve, reject) => {
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const staticData = {
+                        "date": data.date,
+                        "explanation": data.explanation,
+                        "hdurl": data.hdurl,
+                        "media_type": data.media_type,
+                        "service_version": data.service_version,
+                        "title": data.title,
+                        "url": data.url
+                    };
+
+                    resolve(staticData);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    reject(error);
+                });
         });
     }
+
 
     function displayApodData(apod) {
         const { date, explanation, hdurl, media_type, title, url } = apod;
@@ -46,10 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const apodDiv = document.createElement('div');
         apodDiv.classList.add("apodDiv");
         apodDiv.innerHTML = `
-        <div>
-            <img class="apodImage" src="${url}" alt="${title}">
-        </div>
-        <div>
+        <div class="apodImage" style="background-image: url('${url}'); alt="${title}";"></div>
+        <div class="apodContent">
             <h3>${title}</h3>
             <p>${date}</p>
             <p>${explanation}</p>
@@ -57,16 +87,28 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`;
 
         if (media_type === 'image') {
-            apodDiv.querySelector('img').addEventListener('click', () => {
-                window.open(hdurl);
+            const apodImage = apodDiv.querySelector('.apodImage');
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModal = modal.querySelector('.close');
+
+            apodImage.addEventListener('click', () => {
+                modal.style.display = 'block';
+                modalImage.src = hdurl;
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+                modalImage.src = '';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    modalImage.src = '';
+                }
             });
         }
-
-        const favoriteButton = document.getElementById('addFav');
-        favoriteButton.addEventListener('click', () => {
-            saveToFavorites(apod);
-        });
-        // apodDiv.appendChild(favoriteButton);
 
         apodDataElement.innerHTML = '';
         apodDataElement.appendChild(apodDiv);
@@ -85,15 +127,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         favorites.forEach((favorite, index) => {
             const favoriteDiv = document.createElement('div');
+            favoriteDiv.classList.add("favoriteDiv");
             favoriteDiv.innerHTML = `
-          <h3>${favorite.title}</h3>
-          <p>Date: ${favorite.date}</p>
-          <p>${favorite.explanation}</p>
-          <img src="${favorite.url}" alt="${favorite.title}">
-        `;
+            <div class="favImage" style="background-image: url('${favorite.url}'); alt="${favorite.title}";"></div>
+                <div class="apodContent">
+                <h3>${favorite.title}</h3>
+                <p>${favorite.date}</p>
+                <p>${favorite.explanation.length > 300 ? `${favorite.explanation.substring(0, 300)} ...` : favorite.explanation}</p>
+            </div>`;
 
             const removeButton = document.createElement('button');
-            removeButton.textContent = 'Remove from Favorites';
+            removeButton.classList.add("removeButton");
+            removeButton.textContent = 'Remove';
             removeButton.addEventListener('click', () => {
                 removeFromFavorites(index);
             });
@@ -110,5 +155,5 @@ document.addEventListener('DOMContentLoaded', () => {
         displayFavorites();
     }
 
-    displayFavorites(); // Display favorites on page load
+    displayFavorites(); 
 });
